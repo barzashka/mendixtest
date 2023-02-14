@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="classes" thread-count="2">
+    <test verbose="2" preserve-order="true" name="The Test Suite" parallel="false">
+        <classes>
+            <class name="TestCases.CreateRoom">
+                <methods>
+                    <include name="CreateRoomPositive"/>
+                    <include name="EditRoom"/>
+                    <include name="DeleteRoom"/>
+                    <include name="SearchRooms"/>
+                    <include name="CreateRoomNoInput"/>
+                    <include name="CreateRoomInvalidInput"/>
+                </methods>
+            </class>
+            <class name="TestCases.Discharge">
+                <methods>
+                    <include name="DischargePositive"/>
+                    <include name="DischargeNegative"/>
+                    <include name="DischargeCancelClose"/>
+                </methods>
+            </class>
+            <class name="TestCases.Invite">
+                <methods>
+                    <include name="InviteSuperAdmin"/>
+                    <include name="InviteAdmin"/>
+                    <include name="InvitePractitioner"/>
+                    <include name="InviteNurse"/>
+                    <include name="InviteVerifyRoles"/>
+                    <include name="InviteNegative"/>
+                    <include name="InviteCloseCancel"/>
+                </methods>
+            </class>
+            <class name="TestCases.Login">
+                <methods>
+                    <include name="LoginSuperAdmin"/>
+                    <include name="LoginReceptionist"/>
+                    <include name="LoginDoc"/>
+                    <include name="LoginNurse"/>
+                    <include name="LoginMaskUnmaskPassword"/>
+                    <include name="LoginNoInput"/>
+                    <include name="LoginIncorrectPassword"/>
+                </methods>
+            </class>
+            <class name="TestCases.PatientRegister">
+                <methods>
+                    <include name="PatientRegisterPositive"/>
+                    <include name="PatientRegisterUserRolesValidation"/>
+                    <include name="PatientAlreadyAdmitted"/>
+                    <include name="PatientRegisterNegative"/>
+                    <include name="RegisterExistingPatient"/>
+                    <include name="PatientRegisterNegativeDates"/>
+                    <include name="PatientRegisterCloseCancel"/>
+                </methods>
+            </class>
+            <class name="TestCases.ProlongPatientStay">
+                <methods>
+                    <include name="ProlongStay"/>
+                    <include name="ProlongStayUserRolesValidation"/>
+                    <include name="ProlongSNegativePast"/>
+                    <include name="ProlongSNegativeInvalid"/>
+                    <include name="ProlongSCloseCancel"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
